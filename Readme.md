@@ -45,7 +45,7 @@ Where:
 aspects of how CMake builds the ESDK by using command line options (for further details on the use of options, refer
 to Section __CMake Build Configuration Options_ from the Elektron C/C++ Migration Guide).
 
-You can use the following sample command line to generate Visual Studio files for specific use cases.
+You can also use the following sample of command line to generate Visual Studio files for specific use cases.
 
 __Usecase 1__  Generate Visual Studio 2017 project files for building both ETA and EMA Examples and TestTools. 
 The command line will skip the UnitTest and GoogleTest projects. It will generate the projects under folder __c:\dev\ESDK1.2\VisualStudio2017__.
@@ -84,7 +84,9 @@ Open the folder in Windows Explorer you will see the following files generate in
 
 ![ESDK Solution](./Command1.png)
 
-Open ESDK.sln on Visual Studio 2017 you will see all projects from ETA and EMA package. Below screen shot is EMA example 100__MarketPrice__Streaming, CMake will add all source files and header files including libraries required by the project.
+Open ESDK.sln on Visual Studio 2017 you should see all projects from ETA and EMA package under the solution. 
+
+Below screen shot is the project for EMA example 100__MarketPrice__Streaming, CMake will add location of source files,header files and libraries required by the project based on location of sourceDir directory we specified in the first step.
 ![ESDK Projects](./VS2017ESDKPRJ.png)
 You can also access the project files for each Example directly, it locates under folder __VisualStudio2017__. 
 
@@ -179,7 +181,7 @@ It will show below output and generate all needed Makefiles under folder __ESDK1
 
 Apart from using CMake command line, you can use the CMake GUI to generate and configure CMake project. This can be convenient if you don’t like the command line.
 
-Basically Make stores a lot of configuration settings in the project’s cache. This [cache](https://cmake.org/runningcmake/) can be viewed and edited using the CMake GUI. It quite be easy tool to help you setup the project as the settings are presented in a nice list. You can also change build type to a new value such as "Debug" or "Optimized" or you can add specific compiler flag using the tool.
+Basically Make stores a lot of configuration settings in the project’s cache. This [cache](https://cmake.org/runningcmake/) can be viewed and edited using the CMake GUI. It quite be easy tool to help you setup the project as the settings are presented in a nice list. You can also change build type to a new value such as "Debug" or "Optimized" or you can add specific compiler flag using the tool. You can also use CMake-Gui to modify the Cache created by command line and then re-configure the project and regenerate the build files.
 
 You can follow the following steps to generate build files using CMake GUI.
 
